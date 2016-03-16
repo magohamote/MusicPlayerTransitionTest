@@ -20,6 +20,8 @@
 		1D325B9A1C980C1300004B98 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8D1C980C1300004B98 /* Roboto-Regular.ttf */; };
 		1D325B9B1C980C1300004B98 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8E1C980C1300004B98 /* Roboto-Thin.ttf */; };
 		1D325B9C1C980C1300004B98 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8F1C980C1300004B98 /* Roboto-ThinItalic.ttf */; };
+		1DB876861C984362002F7B3D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB876851C984362002F7B3D /* Colors.swift */; };
+		1DB876881C986C97002F7B3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB876871C986C97002F7B3D /* Extensions.swift */; };
 		91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B219FA1B8E18600067D200 /* AppDelegate.swift */; };
 		91B219FD1B8E18600067D200 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B219FC1B8E18600067D200 /* ViewController.swift */; };
 		91B21A001B8E18600067D200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B219FE1B8E18600067D200 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		1D325B8D1C980C1300004B98 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		1D325B8E1C980C1300004B98 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		1D325B8F1C980C1300004B98 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		1DB876851C984362002F7B3D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1DB876871C986C97002F7B3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		91B219F51B8E18600067D200 /* MusicPlayerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B219F91B8E18600067D200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B219FA1B8E18600067D200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			children = (
 				91B219FA1B8E18600067D200 /* AppDelegate.swift */,
 				91B219FC1B8E18600067D200 /* ViewController.swift */,
+				1DB876871C986C97002F7B3D /* Extensions.swift */,
 				91B21A1C1B8E18A20067D200 /* ModalViewController.swift */,
 				91E79D8C1B941235001AE4BC /* LineView.swift */,
 				91B219FE1B8E18600067D200 /* Main.storyboard */,
@@ -155,6 +160,7 @@
 				91B21A031B8E18600067D200 /* LaunchScreen.xib */,
 				91E79D8A1B940377001AE4BC /* playImage.png */,
 				91B219F81B8E18600067D200 /* Supporting Files */,
+				1DB876851C984362002F7B3D /* Colors.swift */,
 			);
 			path = MusicPlayerTransition;
 			sourceTree = "<group>";
@@ -361,6 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B21A1D1B8E18A20067D200 /* ModalViewController.swift in Sources */,
+				1DB876881C986C97002F7B3D /* Extensions.swift in Sources */,
+				1DB876861C984362002F7B3D /* Colors.swift in Sources */,
 				91B219FD1B8E18600067D200 /* ViewController.swift in Sources */,
 				91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */,
 				91E79D8D1B941235001AE4BC /* LineView.swift in Sources */,

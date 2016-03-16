@@ -36,6 +36,10 @@ extension UIColor {
 
 class myColor {
 
+    class func planifyGrey() -> UIColor {
+        return UIColor(rgb: 0x292929)
+    }
+    
     class func localGreen() -> UIColor {
         return UIColor(rgb: 0xc7da75)
     }

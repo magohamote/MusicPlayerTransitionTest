@@ -12,14 +12,22 @@ final class ModalViewController: UIViewController {
     
     var tapCloseButtonActionHandler : (Void -> Void)?
     
+    @IBOutlet weak var imageView: UIImageView!
+    var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let effect = UIBlurEffect(style: .Light)
-        let blurView = UIVisualEffectView(effect: effect)
-        blurView.frame = self.view.bounds
-        self.view.addSubview(blurView)
-        self.view.sendSubviewToBack(blurView)
+        imageView.image = UIImage(named: "screenshot")
+        imageView.contentMode = .ScaleAspectFill
+        
+        scrollView = UIScrollView(frame: self.view.bounds)
+        scrollView.backgroundColor = UIColor.blackColor()
+        scrollView.contentSize.width = self.view.frame.width
+        scrollView.contentSize.height = imageView.frame.height
+        
+        scrollView.addSubview(imageView)
+        self.view.addSubview(scrollView)
     }
     
     @IBAction func tapCloseButton() {
