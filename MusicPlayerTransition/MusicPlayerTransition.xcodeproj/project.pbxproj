@@ -20,6 +20,7 @@
 		1D325B9A1C980C1300004B98 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8D1C980C1300004B98 /* Roboto-Regular.ttf */; };
 		1D325B9B1C980C1300004B98 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8E1C980C1300004B98 /* Roboto-Thin.ttf */; };
 		1D325B9C1C980C1300004B98 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D325B8F1C980C1300004B98 /* Roboto-ThinItalic.ttf */; };
+		1D554D261C99975B00A687CE /* TmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D554D251C99975B00A687CE /* TmpViewController.swift */; };
 		1DB876861C984362002F7B3D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB876851C984362002F7B3D /* Colors.swift */; };
 		1DB876881C986C97002F7B3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB876871C986C97002F7B3D /* Extensions.swift */; };
 		91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B219FA1B8E18600067D200 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		1D325B8D1C980C1300004B98 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		1D325B8E1C980C1300004B98 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		1D325B8F1C980C1300004B98 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		1D554D251C99975B00A687CE /* TmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpViewController.swift; sourceTree = "<group>"; };
 		1DB876851C984362002F7B3D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1DB876871C986C97002F7B3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		91B219F51B8E18600067D200 /* MusicPlayerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				91E79D8A1B940377001AE4BC /* playImage.png */,
 				91B219F81B8E18600067D200 /* Supporting Files */,
 				1DB876851C984362002F7B3D /* Colors.swift */,
+				1D554D251C99975B00A687CE /* TmpViewController.swift */,
 			);
 			path = MusicPlayerTransition;
 			sourceTree = "<group>";
@@ -252,7 +255,7 @@
 				TargetAttributes = {
 					91B219F41B8E18600067D200 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 24DX7S6TSN;
+						DevelopmentTeam = 7NGA386664;
 					};
 					91B21A091B8E18600067D200 = {
 						CreatedOnToolsVersion = 6.4;
@@ -371,6 +374,7 @@
 				1DB876861C984362002F7B3D /* Colors.swift in Sources */,
 				91B219FD1B8E18600067D200 /* ViewController.swift in Sources */,
 				91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */,
+				1D554D261C99975B00A687CE /* TmpViewController.swift in Sources */,
 				91E79D8D1B941235001AE4BC /* LineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +507,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coteries.planify-testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -516,7 +520,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicPlayerTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xxxAIRINxxx.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coteries.planify-testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

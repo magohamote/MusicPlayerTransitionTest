@@ -12,17 +12,21 @@ final class ModalViewController: UIViewController {
     
     var tapCloseButtonActionHandler : (Void -> Void)?
     
-    @IBOutlet weak var imageView: UIImageView!
+    var imageView: UIImageView!
     var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        UIApplication.sharedApplication().statusBarStyle = .Default
         
-        imageView.image = UIImage(named: "screenshot")
+        imageView = UIImageView(image: UIImage(named: "agenda_big"))
         imageView.contentMode = .ScaleAspectFill
         
-        scrollView = UIScrollView(frame: self.view.bounds)
-        scrollView.backgroundColor = UIColor.blackColor()
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
+        scrollView.backgroundColor = UIColor.whiteColor()
         scrollView.contentSize.width = self.view.frame.width
         scrollView.contentSize.height = imageView.frame.height
         
@@ -35,6 +39,8 @@ final class ModalViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("ModalViewController viewWillAppear")
@@ -42,6 +48,7 @@ final class ModalViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         print("ModalViewController viewWillDisappear")
     }
 }

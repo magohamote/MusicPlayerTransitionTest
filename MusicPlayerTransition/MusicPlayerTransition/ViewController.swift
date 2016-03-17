@@ -14,9 +14,9 @@ final class ViewController: UIViewController {
     var navBar = UINavigationBar()
     
     @IBOutlet weak var containerView : UIView!
-    @IBOutlet weak var tabBar : UIView!
-    @IBOutlet weak var miniPlayerView : LineView!
-    @IBOutlet weak var miniPlayerButton : UIButton!
+    @IBOutlet weak var bottomButtonsBar : UIView!
+    @IBOutlet weak var agendaView : LineView!
+    @IBOutlet weak var agendaButton : UIButton!
     
     @IBOutlet weak var contactButton: UIButton!
     @IBOutlet weak var tipsButton: UIButton!
@@ -31,21 +31,28 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        
         setNavBarToTheView()
         
-        miniPlayerView.backgroundColor = UIColor.clearColor()
-        miniPlayerButton.backgroundColor = UIColor.clearColor()
-        miniPlayerButton.setImage(UIImage(named: "agenda"), forState: .Normal)
-        miniPlayerButton.setImage(UIImage(named: "agenda"), forState: .Highlighted)
+        agendaView.backgroundColor = UIColor.clearColor()
+        agendaButton.backgroundColor = UIColor.clearColor()
+        agendaButton.setImage(UIImage(named: "agenda"), forState: .Normal)
+        agendaButton.setImage(UIImage(named: "agenda"), forState: .Highlighted)
         
         notificationView.image = UIImage(named: "notification")
         
-        tabBar.backgroundColor = UIColor.clearColor()
+        bottomButtonsBar.backgroundColor = UIColor.clearColor()
         let backgroundLayer = Colors().gl
-        backgroundLayer.frame = tabBar.bounds
-        tabBar.layer.insertSublayer(backgroundLayer, atIndex: 0)
+        backgroundLayer.frame = bottomButtonsBar.bounds
+        bottomButtonsBar.layer.insertSublayer(backgroundLayer, atIndex: 0)
         
-        setButton(miniPlayerButton)
+        contactButton.addTarget(self, action: "presentTmp:", forControlEvents: .TouchUpInside)
+        tipsButton.addTarget(self, action: "presentTmp:", forControlEvents: .TouchUpInside)
+        docButton.addTarget(self, action: "presentTmp:", forControlEvents: .TouchUpInside)
+        galleryButton.addTarget(self, action: "presentTmp:", forControlEvents: .TouchUpInside)
+        
+        setButton(agendaButton)
         setButton(contactButton)
         setButton(tipsButton)
         setButton(docButton)
@@ -59,9 +66,16 @@ final class ViewController: UIViewController {
         }
         
         let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
-        self.miniPlayerButton.setBackgroundImage(self.generateImageWithColor(color), forState: .Highlighted)
+        self.agendaButton.setBackgroundImage(self.generateImageWithColor(color), forState: .Highlighted)
         
         self.setupAnimator()
+        
+    }
+    
+    
+    func presentTmp(sender: UIButton!) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tmpViewController") as! TmpViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     
@@ -118,7 +132,7 @@ final class ViewController: UIViewController {
     func setupAnimator() {
         self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: self.modalVC)
         self.animator.usingSpringWithDamping = 0.8
-        self.animator.gestureTargetView = self.miniPlayerView
+        self.animator.gestureTargetView = self.agendaView
         self.animator.interactiveType = .Present
         
         // Present
@@ -135,12 +149,12 @@ final class ViewController: UIViewController {
             self.modalVC.view.layoutIfNeeded()
 
             // for X axe
-            let startOriginX = self.miniPlayerView.frame.origin.x
-            let endOriginX = -self.miniPlayerView.frame.size.width
+            let startOriginX = self.agendaView.frame.origin.x
+            let endOriginX = -self.agendaView.frame.size.width
             let diffX = -endOriginX + startOriginX
             
             // tabBar
-            let tabStartOriginY = self.tabBar.frame.origin.y
+            let tabStartOriginY = self.bottomButtonsBar.frame.origin.y
             let tabEndOriginY = containerView.frame.size.height
             let tabDiff = tabEndOriginY - tabStartOriginY
             
@@ -150,34 +164,34 @@ final class ViewController: UIViewController {
             let navBarDiff = navBarEndOriginY - navBarStartOriginY
             
             self.animator.presentationCancelAnimationHandler = { containerView in
-                self.miniPlayerView.frame.origin.x = startOriginX
-                self.modalVC.view.frame.origin.x = self.miniPlayerView.frame.origin.x + self.miniPlayerView.frame.size.width
+                self.agendaView.frame.origin.x = startOriginX
+                self.modalVC.view.frame.origin.x = self.agendaView.frame.origin.x + self.agendaView.frame.size.width
                 self.modalVC.view.frame.origin.y = 0
-                self.tabBar.frame.origin.y = tabStartOriginY
+                self.bottomButtonsBar.frame.origin.y = tabStartOriginY
                 self.navBar.frame.origin.y = navBarStartOriginY
                 self.containerView.alpha = 1.0
-                self.tabBar.alpha = 1.0
+                self.bottomButtonsBar.alpha = 1.0
                 self.navBar.alpha = 1.0
-                self.miniPlayerView.alpha = 1.0
+                self.agendaView.alpha = 1.0
                 self.notificationView.alpha = 1.0
-                for subview in self.miniPlayerView.subviews {
+                for subview in self.agendaView.subviews {
                     subview.alpha = 1.0
                 }
             }
             
             self.animator.presentationAnimationHandler = { [unowned self] containerView, percentComplete in
                 let _percentComplete = percentComplete >= 0 ? percentComplete : 0
-                self.miniPlayerView.frame.origin.x = startOriginX - (diffX * _percentComplete)
+                self.agendaView.frame.origin.x = startOriginX - (diffX * _percentComplete)
                 
-                if self.miniPlayerView.frame.origin.x < endOriginX {
-                    self.miniPlayerView.frame.origin.x = endOriginX
+                if self.agendaView.frame.origin.x < endOriginX {
+                    self.agendaView.frame.origin.x = endOriginX
                 }
 
-                self.modalVC.view.frame.origin.x = self.miniPlayerView.frame.origin.x + self.miniPlayerView.frame.size.width
+                self.modalVC.view.frame.origin.x = self.agendaView.frame.origin.x + self.agendaView.frame.size.width
                 self.modalVC.view.frame.origin.y = 0
-                self.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
-                if self.tabBar.frame.origin.y > tabEndOriginY {
-                    self.tabBar.frame.origin.y = tabEndOriginY
+                self.bottomButtonsBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
+                if self.bottomButtonsBar.frame.origin.y > tabEndOriginY {
+                    self.bottomButtonsBar.frame.origin.y = tabEndOriginY
                 }
                 
                 self.navBar.frame.origin.y = navBarStartOriginY + (navBarDiff * _percentComplete)
@@ -187,11 +201,11 @@ final class ViewController: UIViewController {
                 
                 let alpha = 1.0 - (1.0 * _percentComplete)
                 self.containerView.alpha = alpha + 0.5
-                self.tabBar.alpha = alpha
+                self.bottomButtonsBar.alpha = alpha
                 self.navBar.alpha = alpha
                 self.notificationView.alpha = alpha
                
-                for subview in self.miniPlayerView.subviews {
+                for subview in self.agendaView.subviews {
                     subview.alpha = alpha
                 }
             }
@@ -200,7 +214,7 @@ final class ViewController: UIViewController {
                 self.endAppearanceTransition()
                 
                 if completeTransition {
-                    self.miniPlayerView.alpha = 0.0
+                    self.agendaView.alpha = 0.0
                     self.modalVC.view.removeFromSuperview()
                     containerView.addSubview(self.modalVC.view)
                     self.animator.interactiveType = .Dismiss
@@ -224,13 +238,13 @@ final class ViewController: UIViewController {
             self.modalVC.view.layoutIfNeeded()
             
             // miniPlayerView
-            let startOriginX = 0 - self.miniPlayerView.bounds.size.width
-            let endOriginX = self.containerView.bounds.size.width - self.miniPlayerView.frame.size.width
+            let startOriginX = 0 - self.agendaView.bounds.size.width
+            let endOriginX = self.containerView.bounds.size.width - self.agendaView.frame.size.width
             let diffX = -startOriginX + endOriginX
             
             // tabBar
             let tabStartOriginY = containerView.bounds.size.height
-            let tabEndOriginY = containerView.bounds.size.height - self.tabBar.bounds.size.height
+            let tabEndOriginY = containerView.bounds.size.height - self.bottomButtonsBar.bounds.size.height
             let tabDiff = tabStartOriginY - tabEndOriginY
             
             // navBar
@@ -238,41 +252,41 @@ final class ViewController: UIViewController {
             let navEndOriginY:CGFloat = 0
             let navDiff = navStartOriginY - navEndOriginY
             
-            self.tabBar.frame.origin.y = containerView.bounds.size.height
+            self.bottomButtonsBar.frame.origin.y = containerView.bounds.size.height
             self.navBar.frame.origin.y = -self.navBar.frame.height
             self.containerView.alpha = 0.5
             
             self.animator.dismissalCancelAnimationHandler = { containerView in
-                self.miniPlayerView.frame.origin.x = startOriginX
-                self.modalVC.view.frame.origin.x = self.miniPlayerView.frame.origin.x + self.miniPlayerView.frame.size.width
+                self.agendaView.frame.origin.x = startOriginX
+                self.modalVC.view.frame.origin.x = self.agendaView.frame.origin.x + self.agendaView.frame.size.width
                 self.modalVC.view.frame.origin.y = 0
-                self.tabBar.frame.origin.y = tabStartOriginY
+                self.bottomButtonsBar.frame.origin.y = tabStartOriginY
                 self.navBar.frame.origin.y = navStartOriginY
                 self.containerView.alpha = 0.5
-                self.tabBar.alpha = 0.0
+                self.bottomButtonsBar.alpha = 0.0
                 self.navBar.alpha = 0.0
-                self.miniPlayerView.alpha = 0.0
+                self.agendaView.alpha = 0.0
                 self.notificationView.alpha = 0.0
-                for subview in self.miniPlayerView.subviews {
+                for subview in self.agendaView.subviews {
                     subview.alpha = 0.0
                 }
             }
             
             self.animator.dismissalAnimationHandler = { containerView, percentComplete in
                 let _percentComplete = percentComplete >= -0.05 ? percentComplete : -0.05
-                self.miniPlayerView.frame.origin.x = startOriginX + (diffX * _percentComplete)
-                self.modalVC.view.frame.origin.x = self.miniPlayerView.frame.origin.x + self.miniPlayerView.frame.size.width
+                self.agendaView.frame.origin.x = startOriginX + (diffX * _percentComplete)
+                self.modalVC.view.frame.origin.x = self.agendaView.frame.origin.x + self.agendaView.frame.size.width
                 self.modalVC.view.frame.origin.y = 0
-                self.tabBar.frame.origin.y = tabStartOriginY - (tabDiff * _percentComplete)
+                self.bottomButtonsBar.frame.origin.y = tabStartOriginY - (tabDiff * _percentComplete)
                 self.navBar.frame.origin.y = navStartOriginY - (navDiff * _percentComplete)
                 
                 let alpha = 1.0 * _percentComplete
                 self.containerView.alpha = alpha + 0.5
-                self.tabBar.alpha = alpha
+                self.bottomButtonsBar.alpha = alpha
                 self.navBar.alpha = alpha
-                self.miniPlayerView.alpha = alpha
+                self.agendaView.alpha = alpha
                 self.notificationView.alpha = alpha
-                for subview in self.miniPlayerView.subviews {
+                for subview in self.agendaView.subviews {
                     subview.alpha = alpha
                 }
             }
@@ -282,7 +296,7 @@ final class ViewController: UIViewController {
                 
                 if completeTransition {
                     self.modalVC.view.removeFromSuperview()
-                    self.animator.gestureTargetView = self.miniPlayerView
+                    self.animator.gestureTargetView = self.agendaView
                     self.animator.interactiveType = .Present
                 } else {
                     self.modalVC.view.removeFromSuperview()
