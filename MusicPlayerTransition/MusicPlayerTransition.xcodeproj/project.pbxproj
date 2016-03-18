@@ -34,6 +34,7 @@
 		91E79D8D1B941235001AE4BC /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E79D8C1B941235001AE4BC /* LineView.swift */; };
 		B8CE91AA1C9C3F4700E87364 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE91A91C9C3F4700E87364 /* EventDetailsViewController.swift */; };
 		B8CE91AC1C9C41CF00E87364 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE91AB1C9C41CF00E87364 /* MapKit.framework */; };
+		B8CE91B01C9C5C4800E87364 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE91AF1C9C5C4800E87364 /* TipsViewController.swift */; };
 		C57B6E869CC251F2038548D1 /* Pods_MusicPlayerTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		9C48F433AAE557B772114681 /* Pods_MusicPlayerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicPlayerTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CE91A91C9C3F4700E87364 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		B8CE91AB1C9C41CF00E87364 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B8CE91AF1C9C5C4800E87364 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		EBE703E00FC151BDE1C0A68C /* Pods-MusicPlayerTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayerTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayerTransition/Pods-MusicPlayerTransition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				1DB876851C984362002F7B3D /* Colors.swift */,
 				1D554D251C99975B00A687CE /* TmpViewController.swift */,
 				B8CE91A91C9C3F4700E87364 /* EventDetailsViewController.swift */,
+				B8CE91AF1C9C5C4800E87364 /* TipsViewController.swift */,
 			);
 			path = MusicPlayerTransition;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				1DB876861C984362002F7B3D /* Colors.swift in Sources */,
 				91B219FD1B8E18600067D200 /* ViewController.swift in Sources */,
 				B8CE91AA1C9C3F4700E87364 /* EventDetailsViewController.swift in Sources */,
+				B8CE91B01C9C5C4800E87364 /* TipsViewController.swift in Sources */,
 				91B219FB1B8E18600067D200 /* AppDelegate.swift in Sources */,
 				1D554D261C99975B00A687CE /* TmpViewController.swift in Sources */,
 				91E79D8D1B941235001AE4BC /* LineView.swift in Sources */,
