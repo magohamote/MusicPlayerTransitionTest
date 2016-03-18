@@ -8,39 +8,34 @@
 
 import UIKit
 
-final class ModalViewController: UIViewController {
+final class ModalViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     
-    var tapCloseButtonActionHandler : (Void -> Void)?
+  var tapCloseButtonActionHandler : (Void -> Void)?
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var navBar: UINavigationBar!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    var imageView: UIImageView!
-    var scrollView: UIScrollView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    tableView.delegate = self
+    tableView.dataSource = self
+    UIApplication.sharedApplication().statusBarStyle = .Default
+    configureTableView()
+    navigationController?.navigationBarHidden = false
+    navBar.barTintColor = UIColor.whiteColor()
+  }
+  
+  func configureTableView() {
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 130.0
+  }
+  
+  @IBAction func tapCloseButton(sender: UIBarButtonItem) {
+    self.tapCloseButtonActionHandler?()
+    self.dismissViewControllerAnimated(true, completion: nil)
+  }
 
-        UIApplication.sharedApplication().statusBarStyle = .Default
-        
-        imageView = UIImageView(image: UIImage(named: "agenda_big"))
-        imageView.contentMode = .ScaleAspectFill
-        
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
-        scrollView.backgroundColor = UIColor.whiteColor()
-        scrollView.contentSize.width = self.view.frame.width
-        scrollView.contentSize.height = imageView.frame.height
-        
-        scrollView.addSubview(imageView)
-        self.view.addSubview(scrollView)
-    }
-    
-    @IBAction func tapCloseButton() {
-        self.tapCloseButtonActionHandler?()
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("ModalViewController viewWillAppear")
@@ -51,4 +46,39 @@ final class ModalViewController: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         print("ModalViewController viewWillDisappear")
     }
+  
+  // MARK: - Table view data source
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 4
+  }
+  
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    if indexPath.row == 0 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("hourCell", forIndexPath: indexPath)
+      return cell
+    }
+    if indexPath.row == 1 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("pastEventCell", forIndexPath: indexPath)
+      return cell
+    }
+    if indexPath.row == 2 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("hourCell", forIndexPath: indexPath)
+      let hour = cell.viewWithTag(1) as! UILabel
+      hour.text = "14:30"
+      return cell
+    }
+    if indexPath.row == 3 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("futureEventCell", forIndexPath: indexPath)
+      return cell
+    }
+
+    return UITableViewCell()
+  }
+
 }
