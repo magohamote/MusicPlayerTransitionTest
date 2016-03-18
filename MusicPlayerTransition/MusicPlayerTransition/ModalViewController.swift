@@ -21,13 +21,20 @@ final class ModalViewController: UIViewController, UITableViewDelegate,  UITable
     tableView.dataSource = self
     UIApplication.sharedApplication().statusBarStyle = .Default
     configureTableView()
-    navigationController?.navigationBarHidden = false
-    navBar.barTintColor = UIColor.whiteColor()
+    configureNavBar() 
   }
   
   func configureTableView() {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 130.0
+  }
+  
+  func configureNavBar() {
+    navBar.barTintColor = UIColor.whiteColor()
+    navBar.titleTextAttributes = [
+      NSForegroundColorAttributeName : UIColor.blackColor(),
+      NSFontAttributeName : UIFont(name: "Roboto-Regular", size: 16)!
+    ]
   }
   
   @IBAction func tapCloseButton(sender: UIBarButtonItem) {
@@ -53,27 +60,31 @@ final class ModalViewController: UIViewController, UITableViewDelegate,  UITable
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return 5
   }
   
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
+
     if indexPath.row == 0 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("hourCell", forIndexPath: indexPath)
+      let cell = tableView.dequeueReusableCellWithIdentifier("dayCell", forIndexPath: indexPath)
       return cell
     }
     if indexPath.row == 1 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("pastEventCell", forIndexPath: indexPath)
+      let cell = tableView.dequeueReusableCellWithIdentifier("hourCell", forIndexPath: indexPath)
       return cell
     }
     if indexPath.row == 2 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("pastEventCell", forIndexPath: indexPath)
+      return cell
+    }
+    if indexPath.row == 3 {
       let cell = tableView.dequeueReusableCellWithIdentifier("hourCell", forIndexPath: indexPath)
       let hour = cell.viewWithTag(1) as! UILabel
       hour.text = "14:30"
       return cell
     }
-    if indexPath.row == 3 {
+    if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCellWithIdentifier("futureEventCell", forIndexPath: indexPath)
       return cell
     }
