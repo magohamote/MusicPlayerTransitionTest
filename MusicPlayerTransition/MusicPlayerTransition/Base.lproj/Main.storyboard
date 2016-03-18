@@ -325,7 +325,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9y-nE-XAB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="19" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="13 Jan 2016" id="cTh-dK-ztO">
                                         <barButtonItem key="leftBarButtonItem" image="back" id="yoQ-Vz-Oaf">
@@ -352,15 +352,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 Jan 2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdo-8F-TXJ">
-                                                    <rect key="frame" x="8" y="8" width="356" height="22"/>
+                                                    <rect key="frame" x="8" y="9" width="356" height="22"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Xdo-8F-TXJ" secondAttribute="bottom" constant="-4" id="5e3-qZ-TdQ"/>
-                                                <constraint firstItem="Xdo-8F-TXJ" firstAttribute="top" secondItem="omM-1c-M7s" secondAttribute="topMargin" id="CZh-OD-whj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xdo-8F-TXJ" secondAttribute="bottom" constant="-5" id="5e3-qZ-TdQ"/>
+                                                <constraint firstItem="Xdo-8F-TXJ" firstAttribute="top" secondItem="omM-1c-M7s" secondAttribute="topMargin" constant="1" id="CZh-OD-whj"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Xdo-8F-TXJ" secondAttribute="leading" id="Lds-5b-2vp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Xdo-8F-TXJ" secondAttribute="trailing" constant="3" id="rz4-ry-Apl"/>
                                             </constraints>
@@ -375,7 +375,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFf-yX-WXN">
-                                                    <rect key="frame" x="8" y="5" width="51" height="15"/>
+                                                    <rect key="frame" x="15" y="8" width="51" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="51" id="ywi-ib-wwR"/>
                                                     </constraints>
@@ -392,11 +392,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TNw-uP-Nrq" firstAttribute="leading" secondItem="pFf-yX-WXN" secondAttribute="trailing" constant="3" id="Pqo-Rd-8dL"/>
+                                                <constraint firstItem="TNw-uP-Nrq" firstAttribute="leading" secondItem="pFf-yX-WXN" secondAttribute="trailing" constant="-4" id="Pqo-Rd-8dL"/>
                                                 <constraint firstItem="TNw-uP-Nrq" firstAttribute="centerY" secondItem="XOA-cJ-Twj" secondAttribute="centerY" id="lm7-0X-yFG"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="pFf-yX-WXN" secondAttribute="leading" id="osv-8x-UJ5"/>
-                                                <constraint firstItem="pFf-yX-WXN" firstAttribute="top" secondItem="XOA-cJ-Twj" secondAttribute="topMargin" constant="-3" id="qd0-gg-qal"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pFf-yX-WXN" secondAttribute="bottom" constant="3" id="zjD-fE-vyx"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="pFf-yX-WXN" secondAttribute="leading" constant="-7" id="osv-8x-UJ5"/>
+                                                <constraint firstItem="pFf-yX-WXN" firstAttribute="top" secondItem="XOA-cJ-Twj" secondAttribute="topMargin" id="qd0-gg-qal"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pFf-yX-WXN" secondAttribute="bottom" id="zjD-fE-vyx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -414,7 +414,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presentation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwv-Cu-aDR">
                                                             <rect key="frame" x="38" y="11" width="223" height="21"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                                                            <color key="textColor" red="1" green="0.70588235290000001" blue="0.2274509804" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="1" green="0.70588235290000001" blue="0.2274509804" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kG-Yo-glR">
@@ -422,7 +422,7 @@
                                                             <string key="text">Pitch your product to Corporate 
 Partners!</string>
                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fundrs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StD-XM-I5z">
@@ -431,7 +431,7 @@ Partners!</string>
                                                                 <constraint firstAttribute="height" constant="20" id="ODK-Bb-siZ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqD-ep-P6c">
@@ -441,11 +441,11 @@ Partners!</string>
                                                                 <constraint firstAttribute="height" constant="21" id="fp4-Tv-7vE"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="316" id="BBI-7J-YSK"/>
                                                         <constraint firstItem="StD-XM-I5z" firstAttribute="top" secondItem="7kG-Yo-glR" secondAttribute="bottom" constant="3" id="C3G-JS-UiM"/>
@@ -467,14 +467,14 @@ Partners!</string>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="4"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowIBColor">
                                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                            <real key="value" value="0.80000000000000004"/>
+                                                            <real key="value" value="0.20000000000000001"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                            <size key="value" width="3" height="3"/>
+                                                            <size key="value" width="0.0" height="1.3999999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
@@ -556,14 +556,14 @@ Partners!</string>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="4"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowIBColor">
                                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                            <real key="value" value="0.80000000000000004"/>
+                                                            <real key="value" value="0.20000000000000001"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                            <size key="value" width="3" height="3"/>
+                                                            <size key="value" width="0.0" height="1.3999999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
@@ -589,9 +589,9 @@ Partners!</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zW6-gB-ATI" firstAttribute="bottom" secondItem="BPl-ll-tYe" secondAttribute="top" id="0TC-9x-7T8"/>
-                            <constraint firstItem="F9y-nE-XAB" firstAttribute="top" secondItem="N2f-G2-8Ed" secondAttribute="top" constant="20" id="8tr-Wq-FUq"/>
+                            <constraint firstItem="F9y-nE-XAB" firstAttribute="top" secondItem="N2f-G2-8Ed" secondAttribute="top" constant="19" id="8tr-Wq-FUq"/>
                             <constraint firstItem="F9y-nE-XAB" firstAttribute="trailing" secondItem="zW6-gB-ATI" secondAttribute="trailing" id="H7u-1a-Mz2"/>
-                            <constraint firstItem="F9y-nE-XAB" firstAttribute="bottom" secondItem="zW6-gB-ATI" secondAttribute="top" id="bkH-cm-pJh"/>
+                            <constraint firstItem="F9y-nE-XAB" firstAttribute="bottom" secondItem="zW6-gB-ATI" secondAttribute="top" constant="-1" id="bkH-cm-pJh"/>
                             <constraint firstItem="F9y-nE-XAB" firstAttribute="leading" secondItem="zW6-gB-ATI" secondAttribute="leading" id="pqb-mQ-lwW"/>
                             <constraint firstAttribute="trailing" secondItem="F9y-nE-XAB" secondAttribute="trailing" id="zXO-xZ-naV"/>
                             <constraint firstItem="F9y-nE-XAB" firstAttribute="leading" secondItem="N2f-G2-8Ed" secondAttribute="leading" id="zqf-jm-Jdf"/>

@@ -21,7 +21,7 @@ final class ModalViewController: UIViewController, UITableViewDelegate,  UITable
     tableView.dataSource = self
     UIApplication.sharedApplication().statusBarStyle = .Default
     configureTableView()
-    configureNavBar() 
+    configureNavBar()
   }
   
   func configureTableView() {
